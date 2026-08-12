@@ -7,7 +7,7 @@ log = logging.getLogger("worker")
 
 async def main() -> None:
     log.info("worker starting")
-    while True:
+    while True:  # noqa: ASYNC110 -- placeholder; Day 8 will replace this
         await asyncio.sleep(5)
 
 
