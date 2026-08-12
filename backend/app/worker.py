@@ -4,6 +4,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("worker")
 
+
 async def main() -> None:
     log.info("worker starting")
     while True:
