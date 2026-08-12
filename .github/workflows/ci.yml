@@ -13,17 +13,18 @@ jobs:
         working-directory: backend
     services:
       postgres:
-        image: pgvector/pgvectory:pg16
+        image: pgvector/pgvector:pg16
         env:
           POSTGRES_USER: app
           POSTGRES_PASSWORD: app
           POSTGRES_DB: app
-          ports: ["5432:5432"]
-          options: >-
-            --health-cmd "pg_isready -U app -d app"
-            --health-interval 5s
-            --health-timout 3s
-            --health-retries 20
+        ports: 
+          - "5432:5432"
+        options: >-
+          --health-cmd "pg_isready -U app -d app"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 20
     env:
       DATABASE_URL: postgresql+asyncpg://app:app@localhost:5432/app
     steps:
