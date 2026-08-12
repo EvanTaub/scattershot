@@ -33,7 +33,9 @@ jobs:
         with:
           python-version: 3.12
           enable-cache: true
-      - run: uv pip install --system -e ".[dev]"
+      - run: uv venv --python 3.12
+      - run: echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
+      - run: uv pip install -e ".[dev]"
       - run: ruff check
       - run: ruff format --check
       - run: mypy app
