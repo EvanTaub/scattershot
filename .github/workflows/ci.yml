@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working_directory: backend
+        working-directory: backend
     services:
       postgres:
         image: pgvector/pgvectory:pg16
