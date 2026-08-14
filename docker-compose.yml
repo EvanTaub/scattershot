@@ -1,4 +1,4 @@
-name: jobtracker
+name: scattershot
 
 services:
   db:
@@ -41,7 +41,7 @@ services:
     command: bun run dev --host 0.0.0.0
     volumes:
       - ./frontend:/srv
-      - ./srv/node_modules
+      - //srv/node_modules
     ports: ["5173:5173"]
     depends_on: [backend]
   
